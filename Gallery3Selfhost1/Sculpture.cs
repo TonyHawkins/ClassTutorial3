@@ -12,11 +12,9 @@ namespace Gallery3Selfhost1
     using System;
     using System.Collections.Generic;
     
-    public abstract partial class Work
+    public partial class Sculpture : Work
     {
-        public string Name { get; set; }
-        public System.DateTime Date { get; set; }
-        public decimal Value { get; set; }
-        public string ArtistName { get; set; }
+        public Nullable<float> Weight { get; set; }
+        public string Material { get; set; }
     }
 }

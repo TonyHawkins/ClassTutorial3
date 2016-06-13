@@ -12,11 +12,10 @@ namespace Gallery3Selfhost1
     using System;
     using System.Collections.Generic;
     
-    public abstract partial class Work
+    public partial class Painting : Work
     {
-        public string Name { get; set; }
-        public System.DateTime Date { get; set; }
-        public decimal Value { get; set; }
-        public string ArtistName { get; set; }
+        public Nullable<float> Width { get; set; }
+        public Nullable<float> Height { get; set; }
+        public string Type { get; set; }
     }
 }

@@ -73,8 +73,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GalleryModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Painting.cs">
+      <DependentUpon>GalleryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Photograph.cs">
+      <DependentUpon>GalleryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sculpture.cs">
+      <DependentUpon>GalleryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Work.cs">
       <DependentUpon>GalleryModel.tt</DependentUpon>
     </Compile>

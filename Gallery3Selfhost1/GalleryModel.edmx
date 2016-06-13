@@ -63,22 +63,15 @@
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Works" Relationship="Self.FK_WORK_ARTIST" FromRole="Artist" ToRole="Work" />
         </EntityType>
-        <EntityType Name="Work">
+        <EntityType Name="Work" Abstract="true">
           <Key>
             <PropertyRef Name="Name" />
             <PropertyRef Name="ArtistName" />
           </Key>
-          <Property Name="WorkType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Value" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Width" Type="Single" />
-          <Property Name="Height" Type="Single" />
-          <Property Name="Type" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="Weight" Type="Single" />
-          <Property Name="Material" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="ArtistName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Artist" Relationship="Self.FK_WORK_ARTIST" FromRole="Work" ToRole="Artist" />
         </EntityType>
         <Association Name="FK_WORK_ARTIST">
           <End Role="Artist" Type="Self.Artist" Multiplicity="1" />
@@ -100,6 +93,20 @@
             <End Role="Work" EntitySet="Works" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Painting" BaseType="Gallery_DataModel.Work" >
+          <Property Name="Width" Type="Single" />
+          <Property Name="Height" Type="Single" />
+          <Property Name="Type" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Photograph" BaseType="Gallery_DataModel.Work" >
+          <Property Name="Width" Type="Single" />
+          <Property Name="Height" Type="Single" />
+          <Property Name="Type" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Sculpture" BaseType="Gallery_DataModel.Work" >
+          <Property Name="Weight" Type="Single" />
+          <Property Name="Material" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -116,18 +123,41 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Works">
-            <EntityTypeMapping TypeName="Gallery_DataModel.Work">
+            <EntityTypeMapping TypeName="IsTypeOf(Gallery_DataModel.Work)">
               <MappingFragment StoreEntitySet="Work">
-                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="Width" ColumnName="Width" />
-                <ScalarProperty Name="Height" ColumnName="Height" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="Material" ColumnName="Material" />
                 <ScalarProperty Name="ArtistName" ColumnName="ArtistName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Gallery_DataModel.Painting)">
+              <MappingFragment StoreEntitySet="Work">
+                <ScalarProperty Name="ArtistName" ColumnName="ArtistName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <Condition ColumnName="WorkType" Value="P" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Gallery_DataModel.Photograph)">
+              <MappingFragment StoreEntitySet="Work">
+                <ScalarProperty Name="ArtistName" ColumnName="ArtistName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <Condition ColumnName="WorkType" Value="H" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Gallery_DataModel.Sculpture)">
+              <MappingFragment StoreEntitySet="Work">
+                <ScalarProperty Name="ArtistName" ColumnName="ArtistName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <Condition ColumnName="WorkType" Value="S" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
