@@ -17,7 +17,14 @@ namespace Gallery3Selfhost1.DTO
         [DataMember]
         public string Phone { get; set; }
 
+        public Artist MapToEntity()
+        {
+            return new Artist()
+            { Name = this.Name, Phone = this.Phone, Speciality = this.Speciality };
+        }
+
         //[DataMember]
         //public ICollection<clsWork> Works {get;set;}
+
     }
 }

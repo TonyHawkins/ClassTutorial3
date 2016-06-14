@@ -20,6 +20,18 @@
   <wsdl:message name="IService1_GetArtist_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetArtistResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UpdateArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateArtist" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertArtist" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertArtistResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetArtistNames">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetArtistNames" message="tns:IService1_GetArtistNames_InputMessage" />
@@ -28,6 +40,14 @@
     <wsdl:operation name="GetArtist">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetArtist" message="tns:IService1_GetArtist_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetArtistResponse" message="tns:IService1_GetArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateArtist" message="tns:IService1_UpdateArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateArtistResponse" message="tns:IService1_UpdateArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertArtist" message="tns:IService1_InsertArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertArtistResponse" message="tns:IService1_InsertArtist_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -43,6 +63,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetArtist">
       <soap:operation soapAction="http://tempuri.org/IService1/GetArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArtist">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertArtist">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertArtist" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

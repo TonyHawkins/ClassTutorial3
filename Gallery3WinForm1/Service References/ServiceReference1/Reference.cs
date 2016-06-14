@@ -105,6 +105,18 @@ namespace Gallery3WinForm1.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetArtist", ReplyAction="http://tempuri.org/IService1/GetArtistResponse")]
         System.Threading.Tasks.Task<Gallery3WinForm1.ServiceReference1.clsArtist> GetArtistAsync(string prArtistName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateArtist", ReplyAction="http://tempuri.org/IService1/UpdateArtistResponse")]
+        int UpdateArtist(Gallery3WinForm1.ServiceReference1.clsArtist prArtist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateArtist", ReplyAction="http://tempuri.org/IService1/UpdateArtistResponse")]
+        System.Threading.Tasks.Task<int> UpdateArtistAsync(Gallery3WinForm1.ServiceReference1.clsArtist prArtist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertArtist", ReplyAction="http://tempuri.org/IService1/InsertArtistResponse")]
+        int InsertArtist(Gallery3WinForm1.ServiceReference1.clsArtist prArtist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertArtist", ReplyAction="http://tempuri.org/IService1/InsertArtistResponse")]
+        System.Threading.Tasks.Task<int> InsertArtistAsync(Gallery3WinForm1.ServiceReference1.clsArtist prArtist);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -148,6 +160,22 @@ namespace Gallery3WinForm1.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Gallery3WinForm1.ServiceReference1.clsArtist> GetArtistAsync(string prArtistName) {
             return base.Channel.GetArtistAsync(prArtistName);
+        }
+        
+        public int UpdateArtist(Gallery3WinForm1.ServiceReference1.clsArtist prArtist) {
+            return base.Channel.UpdateArtist(prArtist);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateArtistAsync(Gallery3WinForm1.ServiceReference1.clsArtist prArtist) {
+            return base.Channel.UpdateArtistAsync(prArtist);
+        }
+        
+        public int InsertArtist(Gallery3WinForm1.ServiceReference1.clsArtist prArtist) {
+            return base.Channel.InsertArtist(prArtist);
+        }
+        
+        public System.Threading.Tasks.Task<int> InsertArtistAsync(Gallery3WinForm1.ServiceReference1.clsArtist prArtist) {
+            return base.Channel.InsertArtistAsync(prArtist);
         }
     }
 }

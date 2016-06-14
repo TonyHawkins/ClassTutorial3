@@ -138,23 +138,16 @@ namespace Gallery3WinForm1
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (isValid() == true)
-                try
-                {
-                    pushData();
-                    if (txtName.Enabled)
-                    {
-                //        _Artist.NewArtist();
-                        MessageBox.Show("Artist added!", "Success");
-                        frmMain.Instance.UpdateDisplay();
-                        txtName.Enabled = false;
-                    }
-                    Hide();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+            pushData();
+            if (txtName.Enabled)
+            {
+                Program.SvcClient.InsertArtist(_Artist);
+                frmMain.Instance.UpdateDisplay();
+                txtName.Enabled = false;
+            }
+            else
+                Program.SvcClient.UpdateArtist(_Artist);
+            Hide();
         }
 
         private Boolean isValid()

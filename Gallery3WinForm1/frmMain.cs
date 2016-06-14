@@ -44,7 +44,7 @@ namespace Gallery3WinForm1
         {
             try
             {
-      //          frmArtist.Run(new clsArtist(_ArtistList));
+                frmArtist.Run(null);
             }
             catch (Exception ex)
             {
