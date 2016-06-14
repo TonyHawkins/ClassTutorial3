@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gallery3Selfhost1.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -12,5 +13,7 @@ namespace Gallery3Selfhost1
     {
         [OperationContract]
         List<string> GetArtistNames();
+        [OperationContract]
+        clsArtist GetArtist(string prArtistName);
     }
 }

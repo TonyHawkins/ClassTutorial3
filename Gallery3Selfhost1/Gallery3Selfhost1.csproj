@@ -58,6 +58,7 @@
     <Compile Include="Artist.cs">
       <DependentUpon>GalleryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO.cs" />
     <Compile Include="GalleryModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

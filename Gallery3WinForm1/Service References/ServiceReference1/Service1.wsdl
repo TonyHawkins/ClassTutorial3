@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://f00031133:50561/Service1?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://f00031133:50561/Service1?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://f00031133:50561/Service1?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://f00031133:50561/Service1?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Gallery3Selfhost1.DTO" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetArtistNames_InputMessage">
@@ -13,16 +14,35 @@
   <wsdl:message name="IService1_GetArtistNames_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetArtistNamesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtist" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetArtistNames">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetArtistNames" message="tns:IService1_GetArtistNames_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetArtistNamesResponse" message="tns:IService1_GetArtistNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetArtist" message="tns:IService1_GetArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetArtistResponse" message="tns:IService1_GetArtist_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetArtistNames">
       <soap:operation soapAction="http://tempuri.org/IService1/GetArtistNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtist">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetArtist" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
