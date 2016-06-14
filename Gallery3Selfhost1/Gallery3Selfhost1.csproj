@@ -75,6 +75,7 @@
       <DependentUpon>GalleryModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
+    <Compile Include="ModelExtensions.cs" />
     <Compile Include="Painting.cs">
       <DependentUpon>GalleryModel.tt</DependentUpon>
     </Compile>

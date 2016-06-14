@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using Gallery3WinForm1.ServiceReference1;
 
 namespace Gallery3WinForm1
 {
@@ -44,7 +45,7 @@ namespace Gallery3WinForm1
         {
             try
             {
-                frmArtist.Run(null);
+                frmArtist.Run(""); //frmArtist.Run(new clsArtist(_ArtistList)); ********************
             }
             catch (Exception ex)
             {
