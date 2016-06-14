@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Version_3_C
+namespace Gallery3WinForm1
 {
     sealed class clsNameComparer : IComparer<clsWork>
     {   //Singleton

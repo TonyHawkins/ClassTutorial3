@@ -1,4 +1,4 @@
-namespace Version_3_C
+namespace Gallery3WinForm1
 {
     partial class frmArtist
     {

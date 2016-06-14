@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gallery3", "Gallery3", "{CD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery3Selfhost1", "Gallery3Selfhost1\Gallery3Selfhost1.csproj", "{DCD91001-596B-4B7F-BECD-654E64DDB29A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery3WinForm1", "Gallery3WinForm1\Gallery3WinForm1.csproj", "{7607E0D3-33FC-414E-AA5D-0695ED537D03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,11 +55,28 @@ Global
 		{DCD91001-596B-4B7F-BECD-654E64DDB29A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{DCD91001-596B-4B7F-BECD-654E64DDB29A}.Release|x86.ActiveCfg = Release|Any CPU
 		{DCD91001-596B-4B7F-BECD-654E64DDB29A}.Release|x86.Build.0 = Release|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Debug|ARM.Build.0 = Debug|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Debug|x86.Build.0 = Debug|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Release|ARM.Build.0 = Release|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Release|x86.ActiveCfg = Release|Any CPU
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DCD91001-596B-4B7F-BECD-654E64DDB29A} = {CDA00BB2-03B4-4334-B4A4-68503B344678}
+		{7607E0D3-33FC-414E-AA5D-0695ED537D03} = {CDA00BB2-03B4-4334-B4A4-68503B344678}
 	EndGlobalSection
 EndGlobal

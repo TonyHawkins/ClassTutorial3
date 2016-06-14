@@ -2,7 +2,7 @@ using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
-namespace Version_3_C
+namespace Gallery3WinForm1
 {
     public partial class frmArtist : Form
     {

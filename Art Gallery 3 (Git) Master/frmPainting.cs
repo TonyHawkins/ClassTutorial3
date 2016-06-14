@@ -1,6 +1,6 @@
-namespace Version_3_C
+namespace Gallery3WinForm1
 {
-    public sealed partial class frmPainting : Version_3_C.frmWork
+    public sealed partial class frmPainting : Gallery3WinForm1.frmWork
     {   //Singleton
         private static readonly frmPainting Instance = new frmPainting();
 

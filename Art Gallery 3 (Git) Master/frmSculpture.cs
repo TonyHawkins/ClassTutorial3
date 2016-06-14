@@ -1,6 +1,6 @@
-namespace Version_3_C
+namespace Gallery3WinForm1
 {
-    public sealed partial class frmSculpture : Version_3_C.frmWork
+    public sealed partial class frmSculpture : Gallery3WinForm1.frmWork
     {   //Singleton
         public static readonly frmSculpture Instance = new frmSculpture();
 
