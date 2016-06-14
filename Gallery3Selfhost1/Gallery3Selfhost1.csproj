@@ -73,6 +73,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GalleryModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="IService1.cs" />
     <Compile Include="Painting.cs">
       <DependentUpon>GalleryModel.tt</DependentUpon>
     </Compile>
@@ -84,6 +85,7 @@
     <Compile Include="Sculpture.cs">
       <DependentUpon>GalleryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service1.cs" />
     <Compile Include="Work.cs">
       <DependentUpon>GalleryModel.tt</DependentUpon>
     </Compile>
