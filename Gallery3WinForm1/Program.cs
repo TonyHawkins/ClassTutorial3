@@ -11,7 +11,7 @@ namespace Gallery3WinForm1
         /// The main entry point for the application.
         /// </summary>
         /// 
-
+        public static ServiceReference1.Service1Client SvcClient = new ServiceReference1.Service1Client();
         [STAThread]
         static void Main()
         {
@@ -21,6 +21,9 @@ namespace Gallery3WinForm1
             clsPhotograph.LoadPhotographForm = new clsPhotograph.LoadPhotographFormDelegate(frmPhotograph.Run);
             clsSculpture.LoadSculptureForm = new clsSculpture.LoadSculptureFormDelegate(frmSculpture.Run); */
             Application.Run(frmMain.Instance);
+            if
+                (SvcClient != null && SvcClient.State != System.ServiceModel.CommunicationState.Closed)
+                SvcClient.Close();
         }
     }
 }

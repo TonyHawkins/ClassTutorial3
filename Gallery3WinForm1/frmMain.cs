@@ -31,6 +31,8 @@ namespace Gallery3WinForm1
 
         public void UpdateDisplay()
         {
+            lstArtists.DataSource = null;
+            lstArtists.DataSource = Program.SvcClient.GetArtistNames();
      /*       lstArtists.DataSource = null;
             string[] lcDisplayList = new string[_ArtistList.Count];
             _ArtistList.Keys.CopyTo(lcDisplayList, 0);
