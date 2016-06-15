@@ -31,6 +31,9 @@ namespace Gallery3WinForm1.ServiceReference1 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecialityField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gallery3WinForm1.ServiceReference1.clsWork[] WorksField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -80,12 +83,270 @@ namespace Gallery3WinForm1.ServiceReference1 {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Gallery3WinForm1.ServiceReference1.clsWork[] Works {
+            get {
+                return this.WorksField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WorksField, value) != true)) {
+                    this.WorksField = value;
+                    this.RaisePropertyChanged("Works");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="clsWork", Namespace="http://schemas.datacontract.org/2004/07/Gallery3Selfhost1.DTO")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gallery3WinForm1.ServiceReference1.clsPainting))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gallery3WinForm1.ServiceReference1.clsPhotograph))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gallery3WinForm1.ServiceReference1.clsSculpture))]
+    public partial class clsWork : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ArtistNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ArtistName {
+            get {
+                return this.ArtistNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ArtistNameField, value) != true)) {
+                    this.ArtistNameField = value;
+                    this.RaisePropertyChanged("ArtistName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="clsPainting", Namespace="http://schemas.datacontract.org/2004/07/Gallery3Selfhost1.DTO")]
+    [System.SerializableAttribute()]
+    public partial class clsPainting : Gallery3WinForm1.ServiceReference1.clsWork {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<float> HeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<float> WidthField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<float> Height {
+            get {
+                return this.HeightField;
+            }
+            set {
+                if ((this.HeightField.Equals(value) != true)) {
+                    this.HeightField = value;
+                    this.RaisePropertyChanged("Height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<float> Width {
+            get {
+                return this.WidthField;
+            }
+            set {
+                if ((this.WidthField.Equals(value) != true)) {
+                    this.WidthField = value;
+                    this.RaisePropertyChanged("Width");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="clsPhotograph", Namespace="http://schemas.datacontract.org/2004/07/Gallery3Selfhost1.DTO")]
+    [System.SerializableAttribute()]
+    public partial class clsPhotograph : Gallery3WinForm1.ServiceReference1.clsWork {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<float> HeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<float> WidthField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<float> Height {
+            get {
+                return this.HeightField;
+            }
+            set {
+                if ((this.HeightField.Equals(value) != true)) {
+                    this.HeightField = value;
+                    this.RaisePropertyChanged("Height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<float> Width {
+            get {
+                return this.WidthField;
+            }
+            set {
+                if ((this.WidthField.Equals(value) != true)) {
+                    this.WidthField = value;
+                    this.RaisePropertyChanged("Width");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="clsSculpture", Namespace="http://schemas.datacontract.org/2004/07/Gallery3Selfhost1.DTO")]
+    [System.SerializableAttribute()]
+    public partial class clsSculpture : Gallery3WinForm1.ServiceReference1.clsWork {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaterialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<float> WeightField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Material {
+            get {
+                return this.MaterialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialField, value) != true)) {
+                    this.MaterialField = value;
+                    this.RaisePropertyChanged("Material");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<float> Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
             }
         }
     }
@@ -117,6 +378,30 @@ namespace Gallery3WinForm1.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertArtist", ReplyAction="http://tempuri.org/IService1/InsertArtistResponse")]
         System.Threading.Tasks.Task<int> InsertArtistAsync(Gallery3WinForm1.ServiceReference1.clsArtist prArtist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteArtist", ReplyAction="http://tempuri.org/IService1/DeleteArtistResponse")]
+        int DeleteArtist(Gallery3WinForm1.ServiceReference1.clsArtist prArtist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteArtist", ReplyAction="http://tempuri.org/IService1/DeleteArtistResponse")]
+        System.Threading.Tasks.Task<int> DeleteArtistAsync(Gallery3WinForm1.ServiceReference1.clsArtist prArtist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateWork", ReplyAction="http://tempuri.org/IService1/UpdateWorkResponse")]
+        int UpdateWork(Gallery3WinForm1.ServiceReference1.clsWork prWork);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateWork", ReplyAction="http://tempuri.org/IService1/UpdateWorkResponse")]
+        System.Threading.Tasks.Task<int> UpdateWorkAsync(Gallery3WinForm1.ServiceReference1.clsWork prWork);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertWork", ReplyAction="http://tempuri.org/IService1/InsertWorkResponse")]
+        int InsertWork(Gallery3WinForm1.ServiceReference1.clsWork prWork);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertWork", ReplyAction="http://tempuri.org/IService1/InsertWorkResponse")]
+        System.Threading.Tasks.Task<int> InsertWorkAsync(Gallery3WinForm1.ServiceReference1.clsWork prWork);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteWork", ReplyAction="http://tempuri.org/IService1/DeleteWorkResponse")]
+        int DeleteWork(Gallery3WinForm1.ServiceReference1.clsWork prWork);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteWork", ReplyAction="http://tempuri.org/IService1/DeleteWorkResponse")]
+        System.Threading.Tasks.Task<int> DeleteWorkAsync(Gallery3WinForm1.ServiceReference1.clsWork prWork);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -176,6 +461,38 @@ namespace Gallery3WinForm1.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int> InsertArtistAsync(Gallery3WinForm1.ServiceReference1.clsArtist prArtist) {
             return base.Channel.InsertArtistAsync(prArtist);
+        }
+        
+        public int DeleteArtist(Gallery3WinForm1.ServiceReference1.clsArtist prArtist) {
+            return base.Channel.DeleteArtist(prArtist);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteArtistAsync(Gallery3WinForm1.ServiceReference1.clsArtist prArtist) {
+            return base.Channel.DeleteArtistAsync(prArtist);
+        }
+        
+        public int UpdateWork(Gallery3WinForm1.ServiceReference1.clsWork prWork) {
+            return base.Channel.UpdateWork(prWork);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateWorkAsync(Gallery3WinForm1.ServiceReference1.clsWork prWork) {
+            return base.Channel.UpdateWorkAsync(prWork);
+        }
+        
+        public int InsertWork(Gallery3WinForm1.ServiceReference1.clsWork prWork) {
+            return base.Channel.InsertWork(prWork);
+        }
+        
+        public System.Threading.Tasks.Task<int> InsertWorkAsync(Gallery3WinForm1.ServiceReference1.clsWork prWork) {
+            return base.Channel.InsertWorkAsync(prWork);
+        }
+        
+        public int DeleteWork(Gallery3WinForm1.ServiceReference1.clsWork prWork) {
+            return base.Channel.DeleteWork(prWork);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteWorkAsync(Gallery3WinForm1.ServiceReference1.clsWork prWork) {
+            return base.Channel.DeleteWorkAsync(prWork);
         }
     }
 }

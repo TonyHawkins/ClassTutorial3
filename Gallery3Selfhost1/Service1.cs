@@ -30,6 +30,26 @@ namespace Gallery3Selfhost1
             return process(prArtist.MapToEntity(), System.Data.Entity.EntityState.Added);
         }
 
+        public int DeleteArtist(clsArtist prArtist)
+        {
+            return process(prArtist.MapToEntity(), System.Data.Entity.EntityState.Deleted);
+        }
+
+        public int UpdateWork(clsWork prWork)
+        {
+            return process(prWork.MapToEntity(), System.Data.Entity.EntityState.Modified);
+        }
+
+        public int InsertWork(clsWork prWork)
+        {
+            return process(prWork.MapToEntity(), System.Data.Entity.EntityState.Added);
+        }
+
+        public int DeleteWork(clsWork prWork)
+        {
+            return process(prWork.MapToEntity(), System.Data.Entity.EntityState.Deleted);
+        }
+
         public List<string> GetArtistNames()
         {
             using (Gallery_DataEntities lcContext = new Gallery_DataEntities())
@@ -46,7 +66,9 @@ namespace Gallery3Selfhost1
                                     .Where(Artist => Artist.Name == prArtistName)
                                     .FirstOrDefault();
                 clsArtist lcArtistDTO = new clsArtist()
-                { Name = lcArtist.Name, Speciality = lcArtist.Speciality, Phone = lcArtist.Phone };
+                { Name = lcArtist.Name, Speciality = lcArtist.Speciality, Phone = lcArtist.Phone, Works = new List<clsWork>() };
+                foreach (Work item in lcArtist.Works)
+                    lcArtistDTO.Works.Add(item.MapToDTO());
                 return lcArtistDTO;
             }
         }

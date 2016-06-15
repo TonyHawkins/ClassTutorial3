@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using Gallery3WinForm1.ServiceReference1;
+using System.Linq;
 
 namespace Gallery3WinForm1
 {
@@ -53,6 +54,9 @@ namespace Gallery3WinForm1
 
         private void UpdateDisplay()
         {
+            lstWorks.DataSource = null;
+            if (_Artist.Works != null)
+                lstWorks.DataSource = _Artist.Works.ToList();
      /*       if (_WorksList.SortOrder == 0)
             {
                 _WorksList.SortByName();
@@ -101,27 +105,42 @@ namespace Gallery3WinForm1
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-   /*         string lcReply = new InputBox(clsWork.FACTORY_PROMPT).Answer;
-            if (!string.IsNullOrEmpty(lcReply))
+            string lcReply = new InputBox(clsWork.FACTORY_PROMPT).Answer;
+            if (!string.IsNullOrEmpty(lcReply)) // not cancelled?
             {
-                _WorksList.AddWork(lcReply[0]);
-                UpdateDisplay();
-                frmMain.Instance.UpdateDisplay();
-            } */
+                clsWork lcWork = clsWork.NewWork(lcReply[0]);
+                if (lcWork != null)             //valid artwork created?
+                {
+                    if (txtName.Enabled)        //new artist not saved?
+                    {
+                        pushData();
+                        Program.SvcClient.InsertArtist(_Artist);
+                        txtName.Enabled = false;
+                    }
+                    lcWork.ArtistName = _Artist.Name;
+                    lcWork.EditDetails();
+                    if (!string.IsNullOrEmpty(lcWork.Name))     // not cancelled?
+                    {
+                        refreshFormFromDB(_Artist.Name);
+                        frmMain.Instance.UpdateDisplay();
+                    }
+                }
+            }
         }
 
         private void lstWorks_DoubleClick(object sender, EventArgs e)
         {
-    /*        try
+
+            try
             {
-                _WorksList.EditWork(lstWorks.SelectedIndex);
+                (lstWorks.SelectedValue as clsWork).EditDetails();
                 UpdateDisplay();
                 frmMain.Instance.UpdateDisplay();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            } */
+            } 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

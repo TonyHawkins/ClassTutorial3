@@ -32,6 +32,30 @@
   <wsdl:message name="IService1_InsertArtist_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertArtistResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_DeleteArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArtist" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWork" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertWork" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWork" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetArtistNames">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetArtistNames" message="tns:IService1_GetArtistNames_InputMessage" />
@@ -48,6 +72,22 @@
     <wsdl:operation name="InsertArtist">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertArtist" message="tns:IService1_InsertArtist_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertArtistResponse" message="tns:IService1_InsertArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteArtist" message="tns:IService1_DeleteArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteArtistResponse" message="tns:IService1_DeleteArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateWork" message="tns:IService1_UpdateWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateWorkResponse" message="tns:IService1_UpdateWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertWork" message="tns:IService1_InsertWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertWorkResponse" message="tns:IService1_InsertWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteWork" message="tns:IService1_DeleteWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteWorkResponse" message="tns:IService1_DeleteWork_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -81,6 +121,42 @@
     </wsdl:operation>
     <wsdl:operation name="InsertArtist">
       <soap:operation soapAction="http://tempuri.org/IService1/InsertArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArtist">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWork">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertWork">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWork">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteWork" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gallery3WinForm1.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -17,9 +18,9 @@ namespace Gallery3WinForm1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-     /*       clsPainting.LoadPaintingForm = new clsPainting.LoadPaintingFormDelegate(frmPainting.Run);
+            clsPainting.LoadPaintingForm = new clsPainting.LoadPaintingFormDelegate(frmPainting.Run);
             clsPhotograph.LoadPhotographForm = new clsPhotograph.LoadPhotographFormDelegate(frmPhotograph.Run);
-            clsSculpture.LoadSculptureForm = new clsSculpture.LoadSculptureFormDelegate(frmSculpture.Run); */
+            clsSculpture.LoadSculptureForm = new clsSculpture.LoadSculptureFormDelegate(frmSculpture.Run); 
             Application.Run(frmMain.Instance);
             if
                 (SvcClient != null && SvcClient.State != System.ServiceModel.CommunicationState.Closed)

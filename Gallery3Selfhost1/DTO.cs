@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gallery3Selfhost1.DTO
 {
-   [DataContract]
+    [DataContract]
     public class clsArtist
     {
         [DataMember]
@@ -23,7 +24,7 @@ namespace Gallery3Selfhost1.DTO
             { Name = this.Name, Phone = this.Phone, Speciality = this.Speciality };
         }
         [DataMember]
-        public ICollection<clsWork> Works {get;set;}
+        public ICollection<clsWork> Works { get; set; }
     }
     [DataContract]
     [KnownType(typeof(clsPainting))]
@@ -39,7 +40,20 @@ namespace Gallery3Selfhost1.DTO
         public decimal Value { get; set; }
         [DataMember]
         public string ArtistName { get; set; }
+        public Work MapToEntity()
+        {
+            Work lcWorkEnt = GetEntity();
+            lcWorkEnt.Name = Name;
+            lcWorkEnt.Date = Date;
+            lcWorkEnt.Value = Value;
+            lcWorkEnt.ArtistName = ArtistName;
+            return lcWorkEnt;
+
+        }
+        protected abstract Work GetEntity();
     }
+
+
     public partial class clsPainting : clsWork
     {
         [DataMember]
@@ -48,7 +62,13 @@ namespace Gallery3Selfhost1.DTO
         public Nullable<float> Height { get; set; }
         [DataMember]
         public string Type { get; set; }
+        protected override Work GetEntity()
+        {
+            return new Painting()
+            { Width = this.Width, Height = this.Height, Type = this.Type };
+        }
     }
+
     public partial class clsPhotograph : clsWork
     {
         [DataMember]
@@ -57,6 +77,12 @@ namespace Gallery3Selfhost1.DTO
         public Nullable<float> Height { get; set; }
         [DataMember]
         public string Type { get; set; }
+
+        protected override Work GetEntity()
+        {
+            return new Photograph()
+            { Width = this.Width, Height = this.Height, Type = this.Type };
+        }
     }
     public partial class clsSculpture : clsWork
     {
@@ -64,6 +90,12 @@ namespace Gallery3Selfhost1.DTO
         public Nullable<float> Weight { get; set; }
         [DataMember]
         public string Material { get; set; }
+        protected override Work GetEntity()
+        {
+            return new Sculpture()
+            {  Weight = this.Weight,  Material = this.Material };
+        }
     }
+
 }
 
